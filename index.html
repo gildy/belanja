@@ -63,7 +63,7 @@
         <table>
             <tr><th class="tHeader"> </th><th class="tHeader">ID</th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Link</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" class="spotRow"><td><img class="ppic" src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="http://instagram.com/{{name}}" target="_blank">Instagram</a> </td></tr>
+                <tr id="{{rowNumber}}" instaid="{{name}}" class="spotRow"><td><img class="ppic" src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="http://instagram.com/{{name}}" target="_blank">Instagram</a> </td></tr>
             {{/rows}}
         </table>
     </script>
@@ -174,7 +174,7 @@
                 var selectedCoords = [dataElement[0].lat, dataElement[0].long]
                 var shopfeed = new Instafeed({
                   get: 'user',
-                  userId: selectedSpot.name,
+                  userId: $(this).closest("tr").attr("instaid"),
                   accessToken: '4035205514.cca6435.44d5617c6a654c4f9fb18142a91be412',
                   resolution: 'low_resolution',
                   limit: 4
