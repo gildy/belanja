@@ -59,9 +59,9 @@
 
     <script id="hackSpotsTable" type="text/html">
         <table>
-            <tr><th class="tHeader">ID</th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Elsewhere</th></tr>
+            <tr><th class="tHeader">ID</th><th class="tHeader"> </th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Elsewhere</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" class="spotRow"><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="{{state}}" target="_blank">Pic</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+                <tr id="{{rowNumber}}" class="spotRow"><td><img src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="{{state}}" target="_blank">Pic</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
             {{/rows}}
         </table>
     </script>
