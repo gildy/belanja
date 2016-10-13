@@ -99,7 +99,7 @@
             <h4 class="fauxButton">SELECTED SPOT</h4>
             <h2><img class="ppic" src="{{state}}"> @{{name}}</h2>
             <h3>{{address}}</h3>
-
+            <div id="shopfeed"></div>
 
             <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
 
@@ -177,7 +177,8 @@
                   userId: $(this).closest("tr").attr("instaid"),
                   accessToken: '4035205514.cca6435.44d5617c6a654c4f9fb18142a91be412',
                   resolution: 'low_resolution',
-                  limit: 4
+                  limit: 4,
+                  target: 'shopfeed'
                 });
                 shopfeed.run();
                 //map.setView(selectedCoords, 14)
