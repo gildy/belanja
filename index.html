@@ -62,7 +62,7 @@
     <script id="latestSpot" type="text/html">
         {{#rows}}
         <h4 class="fauxButton">MOST RECENT SHOP</h4>
-        <h2><img class="ppic" src="{{state}}"> @{{name}}</h2>
+        <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
         <h3>{{address}}</h3>
         <!--<div id="shopfeed"></div>-->
 
@@ -77,7 +77,7 @@
     <script id="selectedSpot" type="text/html">
         {{#rows}}
             <h4 class="fauxButton">SELECTED SHOP</h4>
-            <h2><img class="ppic" src="{{state}}"> @{{name}}</h2>
+            <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
             <h3>{{address}}</h3>
             <div id="shopfeed"></div>
 
@@ -150,7 +150,7 @@
                   userId: $(this).closest("tr").attr("instaid"),
                   accessToken: '4035205514.cca6435.44d5617c6a654c4f9fb18142a91be412',
                   resolution: 'low_resolution',
-                  limit: 4,
+                  limit: 8,
                   target: 'shopfeed'
                 });
                 shopfeed.run();
