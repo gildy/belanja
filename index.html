@@ -39,6 +39,7 @@
         <div class="container">
             <input id="tableFilter" type="text" placeholder="filter by.."></input>
             <span class="clear button">Clear</span>
+            Tags : <span class="clear button tag">Clothing</span> <span class="clear button tag">Make Up</span>
             <span class="noMatches">no matches</span>
             <div id="hackSpotsTable"></div>
         </div>
@@ -191,6 +192,12 @@
         $(document).on('keyup', '#tableFilter', function() {
             window.location.hash = $(this).val()
             //$('.spotRow').first().click()
+        })
+
+        $(document).on("click", ".tag", function(event){
+        var tag = $(event.target).text()
+        //var tagFilter = getTagMatches(gData, tag)
+        $('#tableFilter').tag
         })
     </script>
 </body>
