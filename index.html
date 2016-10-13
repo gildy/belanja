@@ -95,10 +95,12 @@
     <script id="selectedSpot" type="text/html">
         {{#rows}}
             <h4 class="fauxButton">SELECTED SPOT</h4>
-            <h2>{{name}}</h2>
-            <p class="colorText">{{address}}<p>
-            <p class="colorText">{{city}}{{#state}}, {{state}}{{/state}}{{#postcode}}, {{postcode}}{{/postcode}}</p>
-            <ul>
+            <h2><img class="ppic" src="{{state}}"> @{{name}}</h2>
+            <h3>{{address}}</h3>
+
+            <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
+
+            <!--<ul>
                 <li><span class="category">Wifi:</span> {{wifipassword}}</li>
                 <li><span class="category">Outlets:</span> {{outlets}}</li>
                 <li><span class="category">Couch:</span> {{couch}}</li>
@@ -109,7 +111,7 @@
             <ul>
                 <li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
                 <li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
-            </ul>
+            </ul>-->
         {{/rows}}
     </script>
 
