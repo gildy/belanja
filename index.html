@@ -136,6 +136,7 @@
             // TODO show popup, change marker color
             $('.spotRow').live("click", function(event) {
                 $('.spotRow').removeClass("selectedRow")
+                $('#shopfeed').empty();
                 var rowNumber = $(this).closest("tr").attr("id")
                 $('#' + rowNumber).addClass("selectedRow")
                 var dataElement = Sheetsee.getMatches(gData, rowNumber, "rowNumber")
