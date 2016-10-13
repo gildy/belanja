@@ -59,13 +59,9 @@
 
     <script id="hackSpotsTable" type="text/html">
         <table>
-<<<<<<< HEAD
-            <tr><th class="tHeader">Pic</th><th class="tHeader">ID</th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Elsewhere</th></tr>
-=======
-            <tr><th class="tHeader">ID</th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Elsewhere</th></tr>
->>>>>>> parent of 0b59814... Update index.html
+            <tr><th class="tHeader">ID</th><th class="tHeader"> </th><th class="tHeader">Name</th><th class="tHeader">Pic URL</th><th class="">Elsewhere</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" class="spotRow"><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="{{state}}" target="_blank">Pic</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+                <tr id="{{rowNumber}}" class="spotRow"><td><img src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="{{state}}" target="_blank">Pic</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
             {{/rows}}
         </table>
     </script>
@@ -137,13 +133,13 @@
 
             // create geoJSON with coordinates and other
             // useful bits from the original data
-           // var optionsJSON = ["name", "address", "city", "rowNumber"]
-           // var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON)
+            var optionsJSON = ["name", "address", "city", "rowNumber"]
+            var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON)
 
             // create map, tilelayer (map background), markers and popups
-            //var map = Sheetsee.loadMap("map")
-            //Sheetsee.addTileLayer(map, 'jllord.n7aml2bc')
-            //var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, "<h2>{{ name }}</h2>", true)
+            var map = Sheetsee.loadMap("map")
+            Sheetsee.addTileLayer(map, 'jllord.n7aml2bc')
+            var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, "<h2>{{ name }}</h2>", true)
 
             // find the latest spot with the most important
             // info filled in (to prevent map breaking if
