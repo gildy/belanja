@@ -11,8 +11,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic'>
-        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700'>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab" rel="stylesheet">
         <link media="screen" rel="stylesheet" type="text/css" href="css/style.css">
         <link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
         <link rel="stylesheet" href="css/MarkerCluster.css" />
@@ -43,7 +42,7 @@
             <div id="hackSpotsTable"></div>
         </div>
         <div id="info" class="container">
-            <h3>Contribute!</h3>
+            <h3>Contribute</h3>
             <div id="theNumberofSpots"></div>
             <p>This website is hooked up to <a href="https://docs.google.com/spreadsheets/d/181sIMpALjllZXomgYsro0XTp6lr4AfeOhJBaRNgY3lU/pubhtml" target="_blank">this Google Spreadsheet</a>, which I've shared, so click and add your favorite hack spots to the bottom of the list! For the map you'll need to <strong>get the lat and long</strong> of the spot, you can get that <a href="http://www.latlong.net/" target="_blank">here</a>. The locating of these places is helpful, so please try to fill out all the columns.</p>
 
@@ -63,7 +62,7 @@
         {{#rows}}
         <h4 class="fauxButton">MOST RECENT SHOP</h4>
         <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
-        <h3>{{address}}</h3>
+        <h4>{{address}}</h4>
         <!--<div id="shopfeed"></div>-->
 
         <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
@@ -78,7 +77,7 @@
         {{#rows}}
             <h4 class="fauxButton">SELECTED SHOP</h4>
             <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
-            <h3>{{address}}</h3>
+            <h4>{{address}}</h4>
             <div id="shopfeed"></div>
 
             <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
@@ -150,7 +149,7 @@
                   userId: $(this).closest("tr").attr("instaid"),
                   accessToken: '4035205514.cca6435.44d5617c6a654c4f9fb18142a91be412',
                   resolution: 'low_resolution',
-                  limit: 8,
+                  limit: 7,
                   target: 'shopfeed'
                 });
                 shopfeed.run();
