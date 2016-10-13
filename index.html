@@ -6,6 +6,7 @@
         <script type="text/javascript" src='js/tabletop1.3.4.js'></script>
         <script type="text/javascript" src='js/sheetsee.js'></script>
         <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
+        <script type="text/javascript" src="js/instafeed.min.js"></script>
         <link rel="shortcut icon" href="https://raw.github.com/jlord/hack-spots/master/favico.png"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -97,6 +98,7 @@
             <h4 class="fauxButton">SELECTED SPOT</h4>
             <h2><img class="ppic" src="{{state}}"> @{{name}}</h2>
             <h3>{{address}}</h3>
+            <div id="instafeed"></div>
 
             <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
 
@@ -120,6 +122,12 @@
             var gData
             var URL = "181sIMpALjllZXomgYsro0XTp6lr4AfeOhJBaRNgY3lU"
                 Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
+            var feed = new Instafeed({
+              get: 'tagged',
+              tagName: 'awesome',
+              clientId: '4a585c911924458d9f81462dd1892fe4'
+            });
+            feed.run();
         })
 
         // so long, so messy
