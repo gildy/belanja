@@ -11,7 +11,7 @@
 /* Table */
 
   table {text-align: left; width: 440px;}
-  #listtoko {height: 515px; overflow-y: scroll; display: block;}
+  #hackSpotsTable {display: block; height: 515px; overflow: auto;}
   th {padding: 10px 0px;}
   td, text {padding: 3px 0 3px 0; font-size: 14px;}
   #tableFilter {margin: 12px 0px; border: none; border-bottom: 1px solid #333; background-color: transparent; padding: 0px; font-family: Merriweather; color: #fff; font-size: 60px; height: 64px;}
