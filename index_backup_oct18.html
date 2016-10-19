@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Cari Apa Sis? - Indonesian Instagram Marketplace by @gildy</title>
+        <title>Instagram Online Shop by Gildy</title>
         <meta charset='utf-8'>
         <script type="text/javascript" src='js/jquery.js '></script>
         <script type="text/javascript" src='js/tabletop1.3.4.js'></script>
@@ -19,55 +19,43 @@
     </head>
 <body>
     <div id="wrapper">
-        <!--<h1>Belanja</h1>
+        <h1>Belanja</h1>
         <div>
             <ul class="nav">
                 <li><strong>Indonesian Instagram Online Shop Directory by</strong></li>
                 <li><a href="http://pradana.info" target="_blank">@GILDY</a></li>
-
+                <!--<li><a href="#info">INFO</a> -</li>-->
                 <li><a href="http://jlord.github.com/sheetsee.js" target="_blank">POWERED BY SHEETSEE.JS</a> -</li>
 
             </ul>
-        </div>-->
-        <div class="container">
-          <input id="tableFilter" type="text" placeholder="Cari apa sis? 🔍👠👗🛍"></input>
-          <span class="clear button">Clear</span>
-          <br />
-          Popular Tags : <span class="clear button tag">Clothing</span>
-          <span class="clear button tag">Hijab</span>
-          <span class="clear button tag">MakeUp</span>
-          <span class="clear button tag">Shoes</span>
-          <span class="clear button tag">Bag</span>
-          <span class="clear button tag">Case</span>
-          <span class="noMatches">no matches</span>
         </div>
         <div class="container">
-
             <div id="rightSide">
                 <div id="latestSpot"></div>
                 <div id="selectedSpot"></div>
             </div>
-            <div id="hackSpotsTable"></div>
             <div id="map"></div>
         </div>
         <div class="container">
-
-
+            <input id="tableFilter" type="text" placeholder="filter by.."></input>
+            <span class="clear button">Clear</span>
+            Tags : <span class="clear button tag">Clothing</span> <span class="clear button tag">Make Up</span>
+            <span class="noMatches">no matches</span>
+            <div id="hackSpotsTable"></div>
         </div>
         <div id="info" class="container">
             <h3>Disclaimer</h3>
             <div id="theNumberofSpots"></div>
-            <p>Cari Apa Sis? - Indonesian Instagram Marketplace by <a href="http://instagram.com/gildy">@gildy</a></p>
             <p>This website is not associated or affiliated with Instagram or any of the shop listed above. All Rights Reserved.</p>
 
         </div>
     </div><!-- end wrapper -->
 
     <script id="hackSpotsTable" type="text/html">
-        <table id="listtoko">
-            <tr><th class="tHeader"> </th><th class="tHeader">ID</th><th class="tHeader">Name</th></tr>
+        <table>
+            <tr><th class="tHeader"> </th><th class="tHeader">ID</th><th class="tHeader">Name</th><th class="tHeader">Tags</th><th class="">Link</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" instaid="{{contributerstwitter}}" class="spotRow"><td><img class="ppic" src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td></tr>
+                <tr id="{{rowNumber}}" instaid="{{contributerstwitter}}" class="spotRow"><td><img class="ppic" src="{{state}}"></td><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td><a class="button" href="http://instagram.com/{{name}}" target="_blank">Instagram</a> </td></tr>
             {{/rows}}
         </table>
     </script>
@@ -75,11 +63,11 @@
     <script id="latestSpot" type="text/html">
         {{#rows}}
         <h4 class="fauxButton">MOST RECENT SHOP</h4>
-        <h2><img class="ppap" src="{{state}}"> <a href="http://instagram.com/{{name}}" target="_blank">@{{name}}</a></h2>
+        <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
         <h4>{{address}}</h4>
-        <!--<div id="shopfeed"></div>-
+        <!--<div id="shopfeed"></div>-->
 
-        <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>-->
+        <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
         {{/rows}}
     </script>
 
@@ -90,11 +78,11 @@
     <script id="selectedSpot" type="text/html">
         {{#rows}}
             <h4 class="fauxButton">SELECTED SHOP</h4>
-            <h2><img class="ppap" src="{{state}}"> <a href="http://instagram.com/{{name}}" target="_blank">@{{name}}</a></h2>
+            <h2><img class="ppap" src="{{state}}"> @{{name}}</h2>
             <h4>{{address}}</h4>
             <div id="shopfeed"></div>
 
-
+            <p><a href="http://instagram.com/{{name}}" target="_blank">View in Instagram</a></p>
 
             <!--<ul>
                 <li><span class="category">Wifi:</span> {{wifipassword}}</li>
@@ -114,7 +102,7 @@
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             var gData
-            var URL = "1TIZzd-fLO0rhCZwefOGIykcNh3I45jRSfQ0JRSvUmY4"
+            var URL = "181sIMpALjllZXomgYsro0XTp6lr4AfeOhJBaRNgY3lU"
                 Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
 
         })
@@ -164,7 +152,7 @@
                   userId: $(this).closest("tr").attr("instaid"),
                   accessToken: '4035205514.cca6435.44d5617c6a654c4f9fb18142a91be412',
                   resolution: 'low_resolution',
-                  limit: 9,
+                  limit: 7,
                   target: 'shopfeed'
                 });
                 shopfeed.run();
@@ -207,10 +195,8 @@
         })
 
         $(document).on("click", ".tag", function(event){
-
-        $('#tableFilter').val($(event.target).text()).keyup()
-        $('.spotRow').first().click()
-
+        //var tag = $(event.target).text()
+        window.location.hash = $(event.target).val()
         //var tagFilter = getTagMatches(gData, tag)
         //$('#tableFilter').tag
         //$('.spotRow').first().click()
